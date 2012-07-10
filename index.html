@@ -1,43 +1,114 @@
 <!doctype html>
 
-<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]--> <!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]--> <!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]--> <!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en">
+   <!--<![endif]-->
+   <head>
+      <title></title>
 
-  <title></title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="description" content="CV - RESERVOIR CODE - 2012">
+      <meta name="author" content="Ulrich VACHON">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="shortcut icon" href="/favicon.ico">
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+      <!-- 960 frmk -->
+      <link rel="stylesheet" href="css/reset.css">
+      <link rel="stylesheet" href="css/960.css">
+      <link rel="stylesheet" href="css/text.css">
+      <!-- custome frmk -->
+      <link rel="stylesheet" href="css/style.css?v=2">
 
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/style.css?v=2">
+      <!--[if lt IE 9]>
+         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+   </head>
 
-  <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+   <body>
+      <div class="container_12">
+         <script type="text/x-handlebars">      
+            <!-- PROFIL -->
+            <section>
+               {{#each App.profilController.content}}
+                  <article class="_container_12">
+                     <div class="profil-block1">
+                        <p id="nom_prenom">
+                           {{prenom}} {{nom}}
+                        <p>
+                        <p id="titre">
+                           {{titre}}
+                        </p>
+                     </div>
+                     <div class="profil-block2">
+                        <p>
+                           {{compte_email}}
+                        </p>
+                        <p>
+                           {{compte_twitter}}
+                        </p>
+                        <p>
+                           {{date_naissance}}
+                        </p>
+                        <p>
+                           {{telephone}}
+                        </p>
+                        <p>
+                           {{ville_residence}}
+                        </p>
+                     </div>
+                  </article>
+               {{/each}}
+            </section>
+   
+            <!-- EXPERIENCES -->
+            <section>
+               <div class="_rotate">
+                  <h1>Expériences</h1>
+               </div>
+               <div>
+                   {{#each App.experienceController.content}}
+                      <article>
+                         <header class="experience-header">
+                            <p>{{periode}}</p>
+                            <p>{{titre}}</p>
+                         </header>
+                         <aside class="experience-aside">
+                            {{resume}}
+                         </aside>
+                      </article>
+                   {{/each}}
+               </div>
+            </section>
 
-    <!-- The missing protocol means that it will match the current protocol, either http or https. If running locally, we use the local jQuery. -->
-	</head>
-
-	<body>
-
-		<h1>Expériences</h1>
-      <script type="text/x-handlebars">
-          <ul>
-         {{#each CV.experienceController.content}}
-            <li>Titre : {{titre}} de {{periode}}</li>
-         {{/each}}
-      </ul>
-      </script>
-
-     <script src="./js/libs/jquery-1.7.2.min.js"></script>
-     <script src="./js/libs/ember-0.9.8.1.min.js"></script>
-     <script src="./js/libs/ember-data.min.js"></script>
-     <script src="./js/app.js"></script>
-
-	</body>
+            <!-- COMPETENCES -->
+            <section>
+               <h1>Compétences</h1>
+               {{#each App.competenceController.content}}
+               <article>
+                   <aside>
+                        <p>Langages : {{langages}}</p>
+                        <p>Frameworks : {{frameworks}}</p>
+                        <p>Librairies : {{librairies}}</p>
+                        <p>Outils : {{outils}}</p>
+                        <p>Serveurs : {{serveurs}}</p>
+                        <p>donnees : {{donnees}}</p>
+                        <p>IDE : {{ide}}</p>
+                        <p>OS : {{os}}</p>
+                     </aside>
+                  </article>
+               {{/each}}
+            </section>
+         </script>
+         <script src="./js/libs/jquery-1.7.2.min.js"></script>
+         <script src="./js/libs/ember-0.9.8.1.js"></script>
+         <script src="./js/libs/ember-data.min.js"></script>
+         <script src="./js/app.js"></script>
+      </div>
+   </body>
 </html>

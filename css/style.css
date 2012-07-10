@@ -86,18 +86,31 @@ a:hover { color: #036; }
     \\ ========================================== //
 */
 
+/* START */
+.profil {padding: 10px; width: 80%; border: 1px solid black}
 
+.profil-block1 {width: 49%; border: 0px solid black; display: inline-block; vertical-align: top}
+.profil-block1 p {color: #444444; font-size: 2em; font-weight: bold; font-family: Georgia}
+.profil-block1 p#titre {color: #999999}
+.profil-block2 {width: 49%; border: 0px solid black; display: inline-block; vertical-align: top; text-align: right}
+.profil-block2 p {color: #999999; font-size: 1em; font-weight: bold; font-family: Georgia}
 
+.experience-header {color: #777777; font-size: 1.3em; font-weight: bold; font-family: Georgia}
+.experience-aside {color: #999999; font-size: 1em; font-family: Georgia}
 
-
-
-
-
-
-
-
-
-
+.rotate {
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+    /* IE */
+    -ms-transform: rotate(-90deg);
+    /* Opera */
+    -o-transform: rotate(-90deg);
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+/* END */
 
 
 .ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
