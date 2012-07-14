@@ -214,7 +214,7 @@ App.Competence.FIXTURES = [
  * CONTROLEURS
  */
 App.profilController = Ember.ArrayController.create({
-	content: App.store.findAll(App.Profil),
+	content: App.store.findAll(App.Profil)
 });
 
 //////////////////
@@ -226,5 +226,5 @@ App.experienceController = Ember.ArrayController.create({
 //////////////////
 
 App.competenceController = Ember.ArrayController.create({
-	content: App.store.findAll(App.Competence),
+	content: App.store.findAll(App.Competence)
 });
