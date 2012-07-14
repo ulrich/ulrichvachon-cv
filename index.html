@@ -1,12 +1,17 @@
 <!doctype html>
 
-<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if lt IE 7 ]>
+<html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>
+<html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>
+<html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>
+<html lang="en" class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
 <html lang="en">
-   <!--<![endif]-->
+<!--<![endif]-->
+
    <head>
       <title></title>
 
@@ -26,84 +31,147 @@
       <link rel="stylesheet" href="css/style.css?v=2">
 
       <!--[if lt IE 9]>
-         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       <![endif]-->
    </head>
 
    <body>
-      <div class="container_12">
-         <script type="text/x-handlebars">      
+      <div class="container_12" style="width: 45%">
+         <script type="text/x-handlebars">
             <!-- PROFIL -->
             <section>
                {{#each App.profilController.content}}
-                  <article class="_container_12">
-                     <div class="profil-block1">
-                        <p id="nom_prenom">
-                           {{prenom}} {{nom}}
-                        <p>
-                        <p id="titre">
-                           {{titre}}
-                        </p>
-                     </div>
-                     <div class="profil-block2">
-                        <p>
-                           {{compte_email}}
-                        </p>
-                        <p>
-                           {{compte_twitter}}
-                        </p>
-                        <p>
-                           {{date_naissance}}
-                        </p>
-                        <p>
-                           {{telephone}}
-                        </p>
-                        <p>
-                           {{ville_residence}}
-                        </p>
-                     </div>
-                  </article>
+               <article class="_container_12">
+                  <div class="profil-block1">
+                     <p id="nom_prenom">
+                        {{prenom}} {{nom}}
+
+                     <p>
+
+                     <p id="titre">
+                        {{titre}}
+                     </p>
+                  </div>
+                  <div class="profil-block2">
+                     <p>
+                        {{compte_email}}
+                     </p>
+
+                     <p>
+                        {{compte_twitter}}
+                     </p>
+
+                     <p>
+                        {{date_naissance}}
+                     </p>
+
+                     <p>
+                        {{telephone}}
+                     </p>
+
+                     <p>
+                        {{ville_residence}}
+                     </p>
+                  </div>
+               </article>
                {{/each}}
             </section>
-   
+
+            <br/>
+
             <!-- EXPERIENCES -->
             <section>
-               <div class="_rotate">
-                  <h1>Expériences</h1>
-               </div>
-               <div>
-                   {{#each App.experienceController.content}}
-                      <article>
-                         <header class="experience-header">
-                            <p>{{periode}}</p>
-                            <p>{{titre}}</p>
-                         </header>
-                         <aside class="experience-aside">
-                            {{resume}}
-                         </aside>
-                      </article>
-                   {{/each}}
+               <div class="experience-liste">
+                  {{#each App.experienceController.content}}
+                     <article>
+                        <header class="experience-header">
+                           <p>{{periode}}</p>
+
+                           <p>{{titre}}</p>
+                        </header>
+                        <aside class="experience-aside">
+                           {{resume}}
+                        </aside>
+                     </article>
+                  {{/each}}
                </div>
             </section>
 
+            <br/>
+
             <!-- COMPETENCES -->
             <section>
-               <h1>Compétences</h1>
-               {{#each App.competenceController.content}}
-               <article>
-                   <aside>
-                        <p>Langages : {{langages}}</p>
-                        <p>Frameworks : {{frameworks}}</p>
-                        <p>Librairies : {{librairies}}</p>
-                        <p>Outils : {{outils}}</p>
-                        <p>Serveurs : {{serveurs}}</p>
-                        <p>donnees : {{donnees}}</p>
-                        <p>IDE : {{ide}}</p>
-                        <p>OS : {{os}}</p>
-                     </aside>
-                  </article>
-               {{/each}}
+               <div class="competence-liste">
+                  {{#each App.competenceController.content}}
+                     <article>
+                        <header class="competence-header">
+                           Langages :
+                        </header>
+                        <aside class="competence-aside">
+                           {{langages}}
+                        </aside>
+                     </article>
+                     <article>
+                        <header class="competence-header">
+                           Frameworks :
+                        </header>
+                        <aside class="competence-aside">
+                           {{frameworks}}
+                        </aside>
+                     </article>
+                     <article>
+                        <header class="competence-header">
+                           Librairies :
+                        </header>
+                        <aside class="competence-aside">
+                           {{librairies}}
+                        </aside>
+                     </article>
+                     <article>
+                        <header class="competence-header">
+                           Outils :
+                        </header>
+                        <aside class="competence-aside">
+                           {{outils}}
+                        </aside>
+                     </article>
+                     <article>
+                        <header class="competence-header">
+                           Serveurs :
+                        </header>
+                        <aside class="competence-aside">
+                           {{serveurs}}
+                        </aside>
+                     </article>
+                     <article>
+                        <header class="competence-header">
+                           Données :
+                        </header>
+                        <aside class="competence-aside">
+                           {{donnees}}
+                        </aside>
+                     </article>
+                     <article>
+                        <header class="competence-header">
+                           IDE :
+                        </header>
+                        <aside class="competence-aside">
+                           {{ide}}
+                        </aside>
+                     </article>
+                     <article>
+                        <header class="competence-header">
+                           OS :
+                        </header>
+                        <aside class="competence-aside">
+                           {{os}}
+                        </aside>
+                     </article>
+                  {{/each}}
+               </div>
             </section>
+
+            <br/>
          </script>
          <script src="./js/libs/jquery-1.7.2.min.js"></script>
          <script src="./js/libs/ember-0.9.8.1.js"></script>
