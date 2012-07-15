@@ -210,6 +210,46 @@ App.Competence.FIXTURES = [
 
 //////////////////
 
+// Formation
+App.Formation = DS.Model.extend({
+   organisme: DS.attr('string'),
+   diplome: DS.attr('string'),
+   intitule: DS.attr('string'),
+   option: DS.attr('string')
+});
+
+App.Formation.FIXTURES = [
+   { "id": 1,
+     "organisme": "AFORP",
+     "intitule": "Bac Systèmes Mécaniques Automatisés" },
+   { "id": 2,
+     "organisme": "Paris 8",
+     "intitule": "DEUG MASS" },
+   { "id": 3,
+     "organisme": "Paris 8",
+     "intitule": "Licence Informatique"},
+   { "id": 4,
+     "organisme": "Paris 8",
+     "intitule": "Maitrise Informatique",
+     "option": "niveau" },
+   { "id": 5,
+     "organisme": "Ideo Technologies",
+     "intitule": "SweetDEV Framework" },
+   { "id": 6,
+     "organisme": "Ideo Technologies",
+     "intitule": "Hibernate" },
+   { "id": 7,
+     "organisme": "BEA",
+     "intitule": "JSF" },
+   { "id": 8,
+     "organisme": "Valtech",
+     "intitule": "Hardocre Java" },
+   { "id": 9,
+     "organisme": "Xebia",
+     "intitule": "Java Performance Tuning",
+     "option": "(KP)" }
+];
+
 /**
  * CONTROLEURS
  */
@@ -227,4 +267,8 @@ App.experienceController = Ember.ArrayController.create({
 
 App.competenceController = Ember.ArrayController.create({
 	content: App.store.findAll(App.Competence)
+});
+
+App.formationController = Ember.ArrayController.create({
+	content: App.store.findAll(App.Formation).toArray().reverse()
 });

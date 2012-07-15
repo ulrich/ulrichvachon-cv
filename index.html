@@ -86,7 +86,6 @@
                      <article>
                         <header class="experience-header">
                            <p>{{periode}}</p>
-
                            <p>{{titre}}</p>
                         </header>
                         <aside class="experience-aside">
@@ -96,8 +95,6 @@
                   {{/each}}
                </div>
             </section>
-
-            <br/>
 
             <!-- COMPETENCES -->
             <section>
@@ -172,6 +169,28 @@
             </section>
 
             <br/>
+
+            <!-- FORMATIONS -->
+            <section>
+               <div class="competence-liste">
+                  {{#each App.formationController.content}}
+                     <article>
+                        <header class="competence-header">
+                           {{organisme}} :
+                        </header>
+                        <aside class="competence-aside">
+                           {{intitule}}
+                           {{#if option}}
+                              <span class="formation-option">{{option}}</span>
+                           {{/if}}
+                        </aside>
+                     </article>
+                  {{/each}}
+               </div>
+            </section>
+
+            <br/>
+
          </script>
          <script src="./js/libs/jquery-1.7.2.min.js"></script>
          <script src="./js/libs/ember-0.9.8.1.js"></script>

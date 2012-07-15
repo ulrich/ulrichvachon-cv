@@ -100,8 +100,10 @@ a:hover { color: #036; }
 .experience-aside {color: #999999; font-size: 1.5em; font-family: Georgia; margin-bottom: 15px; text-align: justify}
 
 .competence-liste {border-left: 1px #999999 solid; padding-left: 10px}
-.competence-header {width: 20%; float:left; color: #777777; font-size: 1.3em; font-weight: bold; font-family: Georgia; margin-bottom: 10px}
-.competence-aside {display: inline-block; width: 79%; text-align: left; color: #999999; font-size: 1.5em; font-family: Georgia; margin-bottom: 15px; text-align: justify}
+.competence-header {width: 25%; float:left; color: #777777; font-size: 1.3em; font-weight: bold; font-family: Georgia; margin-bottom: 10px}
+.competence-aside {display: inline-block; width: 74%; text-align: left; color: #999999; font-size: 1.5em; font-family: Georgia; margin-bottom: 15px; text-align: justify}
+
+.formation-option {font-style: italic; font-size: smaller; color: #CCCCCC;}
 
 /* END */
 
