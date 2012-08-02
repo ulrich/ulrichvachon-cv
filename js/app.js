@@ -1,6 +1,8 @@
+/**
+ * TECH
+ */
 App = Ember.Application.create();
 
-//TECH
 App.store = DS.Store.create({
     revision : 4,
     adapter : DS.fixtureAdapter
@@ -9,29 +11,28 @@ App.store = DS.Store.create({
 /**
  * MODELES
  */
-App.Profil = DS.Model.extend({
-	nom : DS.attr('string'),
-	prenom : DS.attr('string'),
-	titre : DS.attr('string'),
-	compte_email : DS.attr('string'),
-	compte_twitter : DS.attr('string'),
-	date_naissance : DS.attr('string'),
-	telephone : DS.attr('string'),
-	ville_residence : DS.attr('string')
+Profil = Ember.Object.extend({
+	nom: null,
+	prenom: null,
+	titre: null,
+	compte_email: null,
+	compte_twitter: null,
+	date_naissance: null,
+	telephone: null,
+	ville_residence: null
 });
 
-App.Profil.FIXTURES = [
-   { "id": 1,
-	 "nom": "VACHON",
-	 "prenom": "Ulrich",
-	 "titre": ["Développeur JAVA", "Scrum Master"],
-	 "compte_email": "uvachon@reservoircode.net",
-	 "compte_twitter": "twitter.com/ulrich",
-	 "date_naissance": "23 septembre 1974",
-	 "telephone": "06 22 07 79 34",
-	 "ville_residence": "Poissy"
-   }
-];
+var profil = new Array(Profil.create({
+    "id": 1,
+    "nom": "VACHON",
+    "prenom": "Ulrich",
+    "titre": ["Développeur JAVA", "Scrum Master"],
+    "compte_email": "uvachon@reservoircode.net",
+    "compte_twitter": "twitter.com/ulrich",
+    "date_naissance": "23 septembre 1974",
+    "telephone": "06 22 07 79 34",
+    "ville_residence": "Poissy"
+}));
 
 //////////////////
 
@@ -111,30 +112,30 @@ App.Experience.FIXTURES = [
 //////////////////
 
 // Competence
-App.Competence = DS.Model.extend({
-   langages: DS.attr('string'),
-   frameworks: DS.attr('string'),
-   librairies: DS.attr('string'),
-   outils: DS.attr('string'),
-   serveurs: DS.attr('string'),
-   donnees: DS.attr('string'),
-   ide: DS.attr('string'),
-   os: DS.attr('string')
+Competence = Ember.Object.extend({
+    langages: null,
+    frameworks: null,
+    librairies: null,
+    outils: null,
+    serveurs: null,
+    donnees: null,
+    ide: null,
+    os: null
 });
 
-App.Competence.FIXTURES = [
-   { "id": 1,
-     "langages":
-    	 ["Java",
-    	  "XML",
-    	  "SQL",
-    	  "JavaScript/JQuery",
-    	  "Shell",
-    	  "Ruby",
-    	  "AOP/Aspect",
-    	  "Lisp/Clojure",
-    	  "C",
-    	  "Delphi"],
+var competence = new Array(Competence.create({
+   "id": 1,
+   "langages":
+      ["Java",
+       "XML",
+       "SQL",
+       "JavaScript/JQuery",
+       "Shell",
+       "Ruby",
+       "AOP/Aspect",
+       "Lisp/Clojure",
+       "C",
+       "Delphi"],
      "frameworks":
     	 ["Java EE 6/JSP/JSTL/Servlet API/EJB3/JPA",
     	  "Spring MVC",
@@ -150,38 +151,38 @@ App.Competence.FIXTURES = [
     	  "Lucene"],
      "librairies":
     	 ["Java SE 6/Swing/JPDA/JMX/RMI/JAXP/JDBC/JNI",
-    	  ", GUAVA",
-    	  ", SwingX",
-    	  ", Velocity",
-    	  ", DHTMLX",
-    	  ", Amcharts",
-    	  ", BIRT",
-    	  ", Freemarker",
-    	  ", Log4J",
-    	  ", XStream",
-    	  ", JUnit",
-    	  ", TestNG",
-    	  ", Mockito",
-    	  ", Selenium",
-    	  ", Commons",
-    	  ", C3P0"],
+    	  "GUAVA",
+    	  "SwingX",
+    	  "Velocity",
+    	  "DHTMLX",
+    	  "Amcharts",
+    	  "BIRT",
+    	  "Freemarker",
+    	  "Log4J",
+    	  "XStream",
+    	  "JUnit",
+    	  "TestNG",
+    	  "Mockito",
+    	  "Selenium",
+    	  "Commons",
+    	  "C3P0"],
      "outils":
     	 ["DDD",
-    	  ", GIT",
-    	  ", SVN",
-    	  ", CVS",
-    	  ", Cygwin",
-    	  ", Maven",
-    	  ", Ant",
-    	  ", TeamCity",
-    	  ", Hudson",
-    	  ", Cruisecontrol",
-    	  ", Nexus",
-    	  ", Sonar",
-    	  ", VisualVM",
-    	  ", JMeter",
-    	  ", Firebug",
-    	  ", Regex"],
+    	  "GIT",
+    	  "SVN",
+    	  "CVS",
+    	  "Cygwin",
+    	  "Maven",
+    	  "Ant",
+    	  "amCity",
+    	  "Hudson",
+    	  "Cruisecontrol",
+    	  "Nexus",
+    	  "Sonar",
+    	  "VisualVM",
+    	  "JMeter",
+    	  "Firebug",
+    	  "Regex"],
      "serveurs":
     	 ["Tomcat 6",
     	  "Jetty 6",
@@ -205,8 +206,7 @@ App.Competence.FIXTURES = [
     	  "Linux/Ubuntu",
     	  "MaxOSX",
     	  "Open Solaris"]
-   }
-];
+}));
 
 //////////////////
 
@@ -231,7 +231,7 @@ App.Formation.FIXTURES = [
    { "id": 4,
      "organisme": "Paris 8",
      "intitule": "Maitrise Informatique",
-     "option": "niveau" },
+     "option": "(niveau)" },
    { "id": 5,
      "organisme": "Ideo Technologies",
      "intitule": "SweetDEV Framework" },
@@ -250,11 +250,34 @@ App.Formation.FIXTURES = [
      "option": "(KP)" }
 ];
 
+//////////////////
+
+//Formation
+App.Autre = DS.Model.extend({
+   intitule: DS.attr('string'),
+   detail: DS.attr('string')
+});
+
+App.Autre.FIXTURES = [
+   { "id": 1,
+     "intitule": "Devoxx 2012",
+     "detail": "Speaker pour C’est si simple GIT !" },
+   { "id": 2,
+     "intitule": "Devoxx 2012",
+     "detail": "Speaker pour Pratiquer DDD en un éclair." },
+   { "id": 3,
+     "intitule": "R&D",
+     "detail": "Participe à des Barcamps, users-group (java, clojure, groovy, nosql), Devoxx et Agile France, veille technologique au travers de blogs, sites techniques et d’apprentissage (javaspecialists, java-black-belt), lectures d’ouvrages techniques et théoriques sur l’IT, contributions sur des projets open source (Maven, Struts 2, Hibernate Search), passionné d’électronique et de sécurité logicielle." },
+   { "id": 4,
+     "intitule": "Autres",
+     "detail": "Ateliers informatique, électronique de loisir et amateur de concerts." }
+];
+
 /**
  * CONTROLEURS
  */
 App.profilController = Ember.ArrayController.create({
-	content: App.store.findAll(App.Profil)
+	content: profil
 });
 
 //////////////////
@@ -266,9 +289,17 @@ App.experienceController = Ember.ArrayController.create({
 //////////////////
 
 App.competenceController = Ember.ArrayController.create({
-	content: App.store.findAll(App.Competence)
+	content: competence
 });
+
+//////////////////
 
 App.formationController = Ember.ArrayController.create({
 	content: App.store.findAll(App.Formation).toArray().reverse()
+});
+
+//////////////////
+
+App.autreController = Ember.ArrayController.create({
+	content: App.store.findAll(App.Autre).toArray()
 });

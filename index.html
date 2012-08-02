@@ -13,7 +13,7 @@
 <!--<![endif]-->
 
    <head>
-      <title></title>
+      <title>Ulrich VACHON - CV</title>
 
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -36,52 +36,46 @@
    </head>
 
    <body>
-      <div class="container_12" style="width: 45%">
+      <div class="container_12">
          <script type="text/x-handlebars">
             <!-- PROFIL -->
-            <section>
+            <section class="profil">
                {{#each App.profilController.content}}
-               <article class="_container_12">
-                  <div class="profil-block1">
-                     <p id="nom_prenom">
-                        {{prenom}} {{nom}}
-
-                     <p>
-
-                     <p id="titre">
-                        {{titre}}
-                     </p>
-                  </div>
-                  <div class="profil-block2">
-                     <p>
-                        {{compte_email}}
-                     </p>
-
-                     <p>
-                        {{compte_twitter}}
-                     </p>
-
-                     <p>
-                        {{date_naissance}}
-                     </p>
-
-                     <p>
-                        {{telephone}}
-                     </p>
-
-                     <p>
-                        {{ville_residence}}
-                     </p>
-                  </div>
-               </article>
-               {{/each}}
+                   <article class="_container_12">
+                      <div class="profil-block1">
+                         <p id="nom_prenom">
+                            {{prenom}} {{nom}}
+                         </p>
+                         {{#each titre}}
+                            <p class="titre">{{this}}</p>
+                         {{/each}}
+                      </div>
+                      <div class="profil-block2">
+                         <p>
+                            {{compte_email}}
+                         </p>
+                         <p>
+                            {{compte_twitter}}
+                         </p>
+                         <p>
+                            {{date_naissance}}
+                         </p>
+                         <p>
+                            {{telephone}}
+                         </p>
+                         <p>
+                            {{ville_residence}}
+                         </p>
+                      </div>
+                   </article>
+                {{/each}}
             </section>
 
-            <br/>
-
             <!-- EXPERIENCES -->
-            <section>
-               <div class="experience-liste">
+            <section class="experience">
+                <div class="rotate" style="top: 340px">Exp&eacute;riences</div>
+
+                <div class="experience-liste">
                   {{#each App.experienceController.content}}
                      <article>
                         <header class="experience-header">
@@ -97,15 +91,19 @@
             </section>
 
             <!-- COMPETENCES -->
-            <section>
-               <div class="competence-liste">
+            <section class="competence">
+                <div class="rotate" style="top: 360px">Comp&eacute;tences</div>
+
+                <div class="competence-liste">
                   {{#each App.competenceController.content}}
                      <article>
                         <header class="competence-header">
                            Langages :
                         </header>
                         <aside class="competence-aside">
-                           {{langages}}
+                           {{#each langages}}
+                              {{this}},
+                           {{/each}}
                         </aside>
                      </article>
                      <article>
@@ -113,7 +111,9 @@
                            Frameworks :
                         </header>
                         <aside class="competence-aside">
-                           {{frameworks}}
+                           {{#each frameworks}}
+                              {{this}},
+                           {{/each}}
                         </aside>
                      </article>
                      <article>
@@ -121,7 +121,9 @@
                            Librairies :
                         </header>
                         <aside class="competence-aside">
-                           {{librairies}}
+                           {{#each librairies}}
+                              {{this}},
+                           {{/each}}
                         </aside>
                      </article>
                      <article>
@@ -129,7 +131,9 @@
                            Outils :
                         </header>
                         <aside class="competence-aside">
-                           {{outils}}
+                           {{#each outils}}
+                              {{this}},
+                           {{/each}}
                         </aside>
                      </article>
                      <article>
@@ -137,7 +141,9 @@
                            Serveurs :
                         </header>
                         <aside class="competence-aside">
-                           {{serveurs}}
+                           {{#each serveurs}}
+                              {{this}},
+                           {{/each}}
                         </aside>
                      </article>
                      <article>
@@ -145,7 +151,9 @@
                            Données :
                         </header>
                         <aside class="competence-aside">
-                           {{donnees}}
+                           {{#each donnees}}
+                              {{this}},
+                           {{/each}}
                         </aside>
                      </article>
                      <article>
@@ -153,7 +161,9 @@
                            IDE :
                         </header>
                         <aside class="competence-aside">
-                           {{ide}}
+                           {{#each ide}}
+                              {{this}},
+                           {{/each}}
                         </aside>
                      </article>
                      <article>
@@ -161,24 +171,26 @@
                            OS :
                         </header>
                         <aside class="competence-aside">
-                           {{os}}
+                           {{#each os}}
+                              {{this}},
+                           {{/each}}
                         </aside>
                      </article>
                   {{/each}}
                </div>
             </section>
 
-            <br/>
-
             <!-- FORMATIONS -->
-            <section>
-               <div class="competence-liste">
+            <section class="formation">
+                <div class="rotate" style="top: 325px">Formations</div>
+
+                <div class="formation-liste">
                   {{#each App.formationController.content}}
                      <article>
-                        <header class="competence-header">
+                        <header class="formation-header">
                            {{organisme}} :
                         </header>
-                        <aside class="competence-aside">
+                        <aside class="formation-aside">
                            {{intitule}}
                            {{#if option}}
                               <span class="formation-option">{{option}}</span>
@@ -189,8 +201,25 @@
                </div>
             </section>
 
-            <br/>
+            <!-- AUTRES -->
+            <section>
+                <div class="rotate" style="top: 230px">Divers</div>
 
+                <div class="formation-liste">
+                  {{#each App.autreController.content}}
+                     <article>
+                        <header class="formation-header">
+                           {{intitule}} :
+                        </header>
+                        <aside class="formation-aside">
+                           {{detail}}
+                        </aside>
+                     </article>
+                  {{/each}}
+               </div>
+            </section>
+
+            <br/>
          </script>
          <script src="./js/libs/jquery-1.7.2.min.js"></script>
          <script src="./js/libs/ember-0.9.8.1.js"></script>

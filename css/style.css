@@ -89,20 +89,37 @@ a:hover { color: #036; }
 /* START */
 .debug {border: 1px solid red; }
 
+.rotate {
+    -moz-transform: rotate(-90deg);
+    -moz-transform-origin: -50px 10%;
+    position: relative;
+    color: #999999;
+    font-size: 3em;
+    font-weight: bold;
+    font-family: Georgia;
+}
+
+.profil {margin-top: 50px; margin-bottom: 20px}
 .profil-block1 {width: 50%; display: inline-block; vertical-align: top}
 .profil-block1 p {color: #444444; font-size: 2em; font-weight: bold; font-family: Georgia}
-.profil-block1 p#titre {color: #999999}
+.profil-block1 p.titre {color: #999999}
 .profil-block2 {width: 49%; display: inline-block; vertical-align: top; text-align: right}
-.profil-block2 p {color: #999999; font-size: 1em; font-weight: bold; font-family: Georgia}
+.profil-block2 p {color: #999999; font-size: 1.5em; font-weight: bold; font-family: Georgia}
 
+.experience {margin-bottom: 0px}
 .experience-liste {border-left: 1px #999999 solid; padding-left: 10px}
 .experience-header {color: #777777; font-size: 1.8em; font-weight: bold; font-family: Georgia; margin-bottom: 10px}
-.experience-aside {color: #999999; font-size: 1.5em; font-family: Georgia; margin-bottom: 15px; text-align: justify}
+.experience-aside {color: #999999; font-size: 1.5em; font-family: Georgia; margin-bottom: 20px; text-align: justify}
 
+.competence {margin-bottom: 0px}
 .competence-liste {border-left: 1px #999999 solid; padding-left: 10px}
 .competence-header {width: 25%; float:left; color: #777777; font-size: 1.3em; font-weight: bold; font-family: Georgia; margin-bottom: 10px}
 .competence-aside {display: inline-block; width: 74%; text-align: left; color: #999999; font-size: 1.5em; font-family: Georgia; margin-bottom: 15px; text-align: justify}
 
+.formation {border-bottom: 0px}
+.formation-liste {border-left: 1px #999999 solid; padding-left: 10px}
+.formation-header {width: 25%; float:left; color: #777777; font-size: 1.3em; font-weight: bold; font-family: Georgia; margin-bottom: 10px}
+.formation-aside {display: inline-block; width: 74%; text-align: left; color: #999999; font-size: 1.5em; font-family: Georgia; margin-bottom: 15px; text-align: justify}
 .formation-option {font-style: italic; font-size: smaller; color: #CCCCCC;}
 
 /* END */
