@@ -92,6 +92,10 @@ a:hover { color: #036; }
 .rotate {
     -moz-transform: rotate(-90deg);
     -moz-transform-origin: -50px 10%;
+
+    -webkit-transform:rotate(-90deg);
+    -webkit-transform-origin: -50px 10%;
+
     position: relative;
     color: #999999;
     font-size: 3em;
